@@ -1,0 +1,14 @@
+<h1>display quotes here:</h1>
+<ul>
+  <% @quotes.each do |quote|%>
+  <li>
+    <p><%=quote.content%></p>
+  </li>
+  <li>
+    <p>by <%=quote.writer%></p>
+  </li>
+</ul>
+
+<%= form_for @quote do |f|%>
+<%= f.text_area :content, placeholder: "Enlighten with beautiful quotes" %>
+<%= f.submit "submit quote"%>
