@@ -1,14 +1,20 @@
 <h1>display quotes here:</h1>
-<ul>
+<ul id = "quotes">
   <% @quotes.each do |quote|%>
   <li>
     <p><%=quote.content%></p>
   </li>
   <li>
-    <p>by <%=quote.writer%></p>
+    <p>by <em><%=quote.writer%></em></p>
+  </li>
+  <li>
+    <time>Submitted: <%=quote.created_at.strftime('%b%e, %l:%M %p')%></time>
   </li>
 </ul>
+  <% end %>
 
 <%= form_for @quote do |f|%>
 <%= f.text_area :content, placeholder: "Enlighten with beautiful quotes" %>
+<%= f.text_field :writer, placeholder: "Original quoter?"%>
 <%= f.submit "submit quote"%>
+<% end %>
