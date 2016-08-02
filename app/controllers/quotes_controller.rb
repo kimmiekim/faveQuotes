@@ -17,6 +17,7 @@ class QuotesController < ApplicationController
   end
 
   def destroy
+    @quote.destroy
   end
 
   private

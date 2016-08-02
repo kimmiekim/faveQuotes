@@ -13,8 +13,10 @@
 </ul>
   <% end %>
 
-<%= form_for @quote do |f|%>
-<%= f.text_area :content, placeholder: "Enlighten with beautiful quotes" %>
-<%= f.text_field :writer, placeholder: "Original quoter?"%>
-<%= f.submit "submit quote"%>
-<% end %>
+  <%= form_for @quote do |f|%>
+    <%= f.text_area :content, placeholder: "Enlighten with beautiful quotes", id: "content" %>
+    <%= f.text_field :writer, placeholder: "Original quoter?", id: "writer"%>
+    <%= f.submit "submit quote", id: "btn-submit"%>
+  <% end %>
+
+</script>
