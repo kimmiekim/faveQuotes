@@ -1,22 +1,24 @@
-<h1>display quotes here:</h1>
-<ul id = "quotes">
-  <!-- <% @quotes.each do |quote|%>
-  <li>
-    <p><%=quote.content%></p>
-  </li>
-  <li>
-    <p>by <em><%=quote.writer%></em></p>
-  </li>
-  <li>
-    <time>Submitted: <%=quote.created_at.strftime('%b%e, %l:%M %p')%></time>
-  </li> -->
-</ul>
-  <% end %>
-
+<div class="quoteForm">
   <%= form_for @quote do |f|%>
-    <%= f.text_area :content, placeholder: "Enlighten with beautiful quotes", id: "content" %>
-    <%= f.text_field :writer, placeholder: "Original quoter?", id: "writer"%>
-    <%= f.submit "submit quote", id: "btn-submit"%>
+    <%= f.text_area :content, placeholder: "Enlighten me with beautiful quotes", id: "content" %>
+    <%= f.text_area :writer, placeholder: "Original quoter?", id: "writer"%>
+    <%= f.submit "SUBMIT QUOTE", id: "btn-submit"%>
   <% end %>
+</div>
 
-</script>
+<h1>display quotes here:</h1>
+<div id = "quotes">
+  <% @quotes.each do |quote|%>
+  <ul class = "quote">
+    <li>
+      <p id ="quoteContent"><%=quote.content%></p>
+    </li>
+    <li>
+      <p>by <em><%=quote.writer%></em></p>
+    </li>
+    <li>
+      <time>Submitted: <%=quote.created_at.strftime('%b%e, %l:%M %p')%></time>
+    </li>
+  </ul>
+  <% end %>
+</div>

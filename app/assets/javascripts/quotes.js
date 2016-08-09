@@ -13,8 +13,10 @@ $(document).ready(function(){
       data: quoteData,
       dataType: 'script',
       success: function(quote){
-        $quotes.append(`<li> ${content} </li>
-          <li>by ${writer}</li>`);
+        $quotes.prepend(`<ul class = "quote">
+          <li> ${content} </li>
+          <li>by <em>${writer}</em></li>
+          </ul>`);
       },
       error: function(){
         alert("ajax not working!");
